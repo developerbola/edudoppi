@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 // /m MUI Components
 import {
   AppBar,
@@ -115,16 +115,7 @@ function DrawerAppBar() {
               className="linksBox"
             >
               {navItems.map((item) => (
-                <Link
-                  to={item}
-                  smooth={true}
-                  duration={500}
-                  key={item}
-                  activeClass="active"
-                  spy={true}
-                  offset={-70}
-                  onSetActive={handleSetActive}
-                >
+                <Link to={item == "home" ? "/" : item}>
                   <Button
                     key={item}
                     sx={{

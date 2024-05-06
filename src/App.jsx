@@ -1,30 +1,26 @@
 import React from "react";
-import {
-  Navbar,
-  Footer,
-  Hero,
-  About,
-  Courses,
-  Contact,
-} from "./components/components";
+import { Navbar, Footer, NotFound } from "./components/components";
+import { HomePage, AllCourses } from "./pages/pages";
 import "./App.css";
 
 // Fonts
 import "@fontsource/inter/300.css";
+import { Route, Routes } from "react-router-dom";
 
-const App = () => {
+function App() {
   return (
     <>
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Courses />
-        <Contact />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/courses" element={<AllCourses />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
     </>
   );
-};
+}
 
 export default App;
