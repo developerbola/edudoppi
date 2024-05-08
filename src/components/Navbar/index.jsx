@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import logo from "../../../public/logo.png";
 import { Link } from "react-router-dom";
 
+=======
+import * as React from "react";
+import { Link } from "react-router-dom";
+>>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
 // /m MUI Components
 import {
   AppBar,
@@ -94,6 +99,7 @@ function DrawerAppBar() {
             >
               <MenuIcon sx={{ fontSize: "2rem" }} />
             </IconButton>
+<<<<<<< HEAD
             <Box
               sx={{
                 display: "flex",
@@ -124,6 +130,21 @@ function DrawerAppBar() {
                 edudoppi
               </Typography>
             </Box>
+=======
+            {/* <img src={logo} alt="navLogo" height={40} /> */}
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", sm: "block" },
+                fontFamily: "Inter",
+                fontSize: "30px",
+              }}
+            >
+              edudoppi
+            </Typography>
+>>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },
