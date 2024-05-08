@@ -33,7 +33,7 @@ const index = () => {
           <Typography
             sx={{
               display: { xs: "none", md: "block" },
-              width: "40%",
+              width: "50%",
               fontSize: "1.2rem",
               bgcolor: "#ffffff30",
               p: "10px",
@@ -43,7 +43,7 @@ const index = () => {
               mb: "10px",
             }}
           >
-            Learn Techs with US
+           Kelajakni Biz Bilan O'rgan!
           </Typography>
           <Typography
             sx={{
@@ -55,17 +55,18 @@ const index = () => {
               mb: "10px",
             }}
           >
-            Next Gen Innovational <br /> technologies courses
+            Yangi Avlod Innovatsional <br /> texnalogiyalari kurslari
           </Typography>
           <Typography sx={{ ml: "15px" }}>
-            Welcome to the Future of Learning! Make and Explore your future with
-            our <br /> comprehensive and easy learning courses!
+            Kelajakni o'rganishga Hush Kelibsiz! 
+            Bizning o'rganishga oson <br /> bo'lgan kurslarimiz bilan kelajagingizni quring va kashf etish!
+           
           </Typography>
           <Link to="courses" smooth={true} duration={500}>
             <Button
               variant="outlined"
               sx={{
-                width: "230px",
+                width: "250px",
                 bgcolor: "#00000030",
                 p: "10px 15px",
                 borderRadius: "30px",
@@ -75,7 +76,7 @@ const index = () => {
                 mt: "50px",
               }}
             >
-              View courses
+              Kurslarni ko'rish
               <KeyboardArrowRightIcon fontSize="large" sx={{ ml: "10px" }} />
             </Button>
           </Link>

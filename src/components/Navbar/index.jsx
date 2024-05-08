@@ -1,6 +1,7 @@
-import * as React from "react";
+import logo from "../../../public/logo.png";
 import { Link } from "react-router-dom";
-// /m MUI Components
+
+// MUI Components 
 import {
   AppBar,
   Box,
@@ -45,13 +46,10 @@ function DrawerAppBar() {
         {navItems.map((item) => (
           <Link
             to={item}
-            smooth={true}
+            smooth="true"
             duration={500}
             key={item}
-            activeClass="active"
-            spy={true}
             offset={-70}
-            onSetActive={handleSetActive}
           >
             <ListItem>
               <ListItemButton
@@ -93,19 +91,37 @@ function DrawerAppBar() {
             >
               <MenuIcon sx={{ fontSize: "2rem" }} />
             </IconButton>
-            {/* <img src={logo} alt="navLogo" height={40} /> */}
-            <Typography
-              variant="h6"
-              component="div"
+
+            <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-                fontFamily: "Inter",
-                fontSize: "30px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-around",
               }}
             >
-              edudoppi
-            </Typography>
+              <img
+                src={logo}
+                alt="navLogo"
+                height={40}
+                style={{
+                  WebkitFilter: "drop-shadow(0 0 3px #fff)",
+                  filter: "drop-shadow(0 0 4px #fff)",
+                  marginRight: "10px"
+                }}
+              />
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "none", sm: "block" },
+                  fontFamily: "Inter",
+                  fontSize: "30px",
+                }}
+              >
+                edudoppi
+              </Typography>
+            </Box>
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },
@@ -115,7 +131,7 @@ function DrawerAppBar() {
               className="linksBox"
             >
               {navItems.map((item) => (
-                <Link to={item == "home" ? "/" : item}>
+                <Link to={item == "home" ? "/" : item} key={item}>
                   <Button
                     key={item}
                     sx={{
