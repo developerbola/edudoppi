@@ -1,7 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from "../../../public/logo.png";
 import { Link } from "react-router-dom";
 
+=======
+import * as React from "react";
+import { Link } from "react-router-dom";
+>>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
 =======
 import * as React from "react";
 import { Link } from "react-router-dom";
@@ -100,6 +105,7 @@ function DrawerAppBar() {
               <MenuIcon sx={{ fontSize: "2rem" }} />
             </IconButton>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Box
               sx={{
                 display: "flex",
@@ -131,6 +137,8 @@ function DrawerAppBar() {
               </Typography>
             </Box>
 =======
+=======
+>>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
             {/* <img src={logo} alt="navLogo" height={40} /> */}
             <Typography
               variant="h6"
@@ -144,6 +152,9 @@ function DrawerAppBar() {
             >
               edudoppi
             </Typography>
+<<<<<<< HEAD
+>>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
+=======
 >>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
             <Box
               sx={{

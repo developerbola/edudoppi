@@ -15,7 +15,11 @@ const LeftImage = ({ mt }) => {
       transition={{
         type: "tween",
 <<<<<<< HEAD
+<<<<<<< HEAD
         duration: .6
+=======
+        delay: .2
+>>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
 =======
         delay: .2
 >>>>>>> 2f00df46562d428979e5bc132cc32196ce9f2831
