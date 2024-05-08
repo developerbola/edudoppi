@@ -1,0 +1,8 @@
+main {
+  min-height: 100vh;
+  margin-top: 100px;
+}
+
+.linksBox .active {
+  color: #fff;
+}
