@@ -1,7 +1,6 @@
-import logo from "../../../public/logo.png";
+import * as React from "react";
 import { Link } from "react-router-dom";
-
-// MUI Components 
+// /m MUI Components
 import {
   AppBar,
   Box,
@@ -91,37 +90,19 @@ function DrawerAppBar() {
             >
               <MenuIcon sx={{ fontSize: "2rem" }} />
             </IconButton>
-
-            <Box
+            {/* <img src={logo} alt="navLogo" height={40} /> */}
+            <Typography
+              variant="h6"
+              component="div"
               sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
+                flexGrow: 1,
+                display: { xs: "none", sm: "block" },
+                fontFamily: "Inter",
+                fontSize: "30px",
               }}
             >
-              <img
-                src={logo}
-                alt="navLogo"
-                height={40}
-                style={{
-                  WebkitFilter: "drop-shadow(0 0 3px #fff)",
-                  filter: "drop-shadow(0 0 4px #fff)",
-                  marginRight: "10px"
-                }}
-              />
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  flexGrow: 1,
-                  display: { xs: "none", sm: "block" },
-                  fontFamily: "Inter",
-                  fontSize: "30px",
-                }}
-              >
-                edudoppi
-              </Typography>
-            </Box>
+              edudoppi
+            </Typography>
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },

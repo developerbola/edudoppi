@@ -14,7 +14,7 @@ const LeftImage = ({ mt }) => {
       animate={{ x: 0, opacity: 1, y: mt, backgroundSize: "200%" }}
       transition={{
         type: "tween",
-        duration: .6
+        delay: .2
       }}
       whileHover={{
         backgroundSize: "300%"
