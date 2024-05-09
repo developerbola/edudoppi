@@ -104,18 +104,21 @@ function DrawerAppBar() {
                   marginRight: "10px",
                 }}
               />
-              <Typography
-                variant="h6"
-                component="div"
-                sx={{
-                  flexGrow: 1,
-                  display: { xs: "none", sm: "block" },
-                  fontFamily: "Inter",
-                  fontSize: "30px",
-                }}
-              >
-                edudoppi
-              </Typography>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "none", sm: "block" },
+                    fontFamily: "Inter",
+                    fontSize: "30px",
+                    color: "#fff",
+                  }}
+                >
+                  edudoppi
+                </Typography>
+              </Link>
             </Box>
             <Box
               sx={{
@@ -129,7 +132,7 @@ function DrawerAppBar() {
                 <Link to={item == "home" ? "/" : item} key={item}>
                   <Button
                     sx={{
-                      color: "#a2a2a2",
+                      color: "#fff",
                       fontSize: { xs: ".9rem", md: "1rem", lg: "1.2rem" },
                       margin: { xs: "0 0px", md: "0 10px" },
                       fontFamily: "inter",
@@ -143,7 +146,7 @@ function DrawerAppBar() {
                 <Button
                   sx={{
                     color: "#fff",
-                    bgcolor: "#00ff0833",
+                    bgcolor: "#ffffff10",
                     p: "8px 20px",
                     borderRadius: "25px",
                   }}

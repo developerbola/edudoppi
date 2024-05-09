@@ -4,9 +4,16 @@ const Card = ({ icon, txt, color }) => {
   return (
     <Box
       sx={{
-        height: "250px",
-
-        width: "30%",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: { xs: "170px", sm: "200px", md: "250px" },
+        width: {
+          xs: "100%",
+          sm: "calc(50% - 20px)",
+          md: "calc(33.33% - 20px)",
+        },
+        margin: "10px",
+        gap: "10px",
         border: "1px solid #ffffff40",
         bgcolor: "#ffffff10",
         backdropFilter: "blur(10px)",
@@ -16,19 +23,25 @@ const Card = ({ icon, txt, color }) => {
     >
       <Box
         sx={{
-          p: "15px",
-          bgcolor: color,
+          bgcolor: { xs: "transparent", md: color },
           borderRadius: "20px",
           width: 80,
           height: 80,
           display: "grid",
           placeItems: "center",
-          mb: "15px",
+          alignSelf: { sm: "center", md: "start" },
         }}
       >
         {icon}
       </Box>
-      <Typography sx={{ fontSize: "1.5rem" }}>{txt}</Typography>
+      <Typography
+        sx={{
+          fontSize: { xs: "1rem", md: "1.3rem", lg: "1.5rem" },
+          textAlign: { sm: "center", md: "start" },
+        }}
+      >
+        {txt}
+      </Typography>
     </Box>
   );
 };

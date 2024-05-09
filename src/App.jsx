@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Footer, NotFound } from "./components/components";
-import { Home, AllCourses, Contact } from "./pages/pages";
+import { Home, Courses, Contact, Login } from "./pages/pages";
 import "./App.css";
 
 // Fonts
@@ -14,8 +14,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<AllCourses />} />
+          <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

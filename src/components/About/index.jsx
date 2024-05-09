@@ -7,13 +7,15 @@ import PersonAddIcon from "@mui/icons-material/PersonAdd";
 const index = () => {
   return (
     <Box id="about" sx={{ minHeight: "60vh", px: "50px" }}>
-      <Typography sx={{ fontSize: "3.5rem", fontFamily: "Inter", mb: "30px" }}>
+      <Typography sx={{ fontSize: { xs: "2.3rem", md: "3.5rem" }, fontFamily: "Inter", mb: "30px" }}>
         "edudoppi" bu -
       </Typography>
       <Box
         sx={{
           display: "flex",
+          gap: "10px",
           alignItems: "center",
+          flexDirection: { xs: "column", md: "row" },
           justifyContent: "space-around",
           width: "100%",
         }}
