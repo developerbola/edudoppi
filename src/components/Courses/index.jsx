@@ -3,7 +3,10 @@ import CourseCard from "./CourseCard";
 
 const index = () => {
   return (
-    <Box sx={{ minHeight: "100vh", px: "50px", mt: "30px" }} id="courses">
+    <Box
+      sx={{ minHeight: "100vh", px: { xs: "0", sm: "50px" }, mt: "30px" }}
+      id="courses"
+    >
       <Container>
         <Box
           sx={{
@@ -21,10 +24,14 @@ const index = () => {
         </Box>
         <Box
           sx={{
-            p: "20px",
+            p: { xs: "20px", md: "20px 0" },
             display: "flex",
             flexWrap: "wrap",
             gap: "35px",
+            justifyContent: "center", // Center the items horizontally
+            "@media screen and (max-width: 768px)": {
+              gap: "20px", // Reduce the gap between items on smaller screens
+            },
           }}
         >
           <CourseCard
@@ -55,13 +62,13 @@ const index = () => {
             img={
               "https://i.pinimg.com/736x/69/b8/41/69b841b99e0c45554e061725970ffef5.jpg"
             }
-            name="Node JS"
+            name="React Native"
           />
           <CourseCard
             img={
               "https://i.pinimg.com/736x/69/b8/41/69b841b99e0c45554e061725970ffef5.jpg"
             }
-            name="Node JS"
+            name="SMM"
           />
         </Box>
       </Container>

@@ -1,6 +1,8 @@
 import logo from "../../../public/logo.png";
 import { Link } from "react-router-dom";
-
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import CategoryRoundedIcon from "@mui/icons-material/CategoryRounded";
+import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 // MUI Components
 
 import {
@@ -22,19 +24,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 const drawerWidth = 240;
-const navItems = ["home", "courses", "contact"];
+const navItems = ["home", "courses"];
 
 function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
-  };
-
-  const [activeLink, setActiveLink] = useState("");
-
-  const handleSetActive = (to) => {
-    setActiveLink(to);
   };
 
   const drawer = (
@@ -45,16 +41,49 @@ function DrawerAppBar() {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <Link to={item} smooth="true" duration={500} key={item} offset={-70}>
+          <Link
+            to={item == "home" ? "/" : item}
+            key={item}
+            style={{ textDecoration: "none" }}
+          >
             <ListItem>
               <ListItemButton
-                sx={{ textAlign: "start", textTransform: "capitalize" }}
+                sx={{
+                  textAlign: "start",
+                  textTransform: "capitalize",
+                  color: "#fff",
+                  borderRadius: "10px",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  px: "15px",
+                  bgcolor: "#ffffff05",
+                }}
               >
                 <ListItemText primary={item} />
+                {item == "home" ? <HomeRoundedIcon /> : <CategoryRoundedIcon />}
               </ListItemButton>
             </ListItem>
           </Link>
         ))}
+        <Link to={"/login"} style={{ textDecoration: "none" }}>
+          <ListItem>
+            <ListItemButton
+              sx={{
+                textAlign: "start",
+                textTransform: "capitalize",
+                color: "#fff",
+                borderRadius: "10px",
+                display: "flex",
+                justifyContent: "space-between",
+                px: "15px",
+                bgcolor: "#00ff291a",
+              }}
+            >
+              <ListItemText primary={"Login"} />
+              <LoginRoundedIcon />
+            </ListItemButton>
+          </ListItem>
+        </Link>
       </List>
     </Box>
   );
@@ -149,10 +178,12 @@ function DrawerAppBar() {
                     bgcolor: "#ffffff10",
                     p: "8px 20px",
                     borderRadius: "25px",
+                    ml: "10px",
                   }}
                   variant="outlined"
                 >
                   Login
+                  <LoginRoundedIcon sx={{ml: "5px"}}/>
                 </Button>
               </Link>
             </Box>
@@ -172,6 +203,10 @@ function DrawerAppBar() {
               "& .MuiDrawer-paper": {
                 boxSizing: "border-box",
                 width: drawerWidth,
+              },
+              "& .MuiPaper-root": {
+                bgcolor: "#00000020",
+                backdropFilter: "blur(10px)",
               },
             }}
           >
