@@ -1,6 +1,8 @@
-import * as React from "react";
+import logo from "../../../public/logo.png";
 import { Link } from "react-router-dom";
-// /m MUI Components
+
+// MUI Components
+
 import {
   AppBar,
   Box,
@@ -20,7 +22,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 
 const drawerWidth = 240;
-const navItems = ["home", "about", "courses", "contact"];
+const navItems = ["home", "courses", "contact"];
 
 function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -43,13 +45,7 @@ function DrawerAppBar() {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <Link
-            to={item}
-            smooth="true"
-            duration={500}
-            key={item}
-            offset={-70}
-          >
+          <Link to={item} smooth="true" duration={500} key={item} offset={-70}>
             <ListItem>
               <ListItemButton
                 sx={{ textAlign: "start", textTransform: "capitalize" }}
@@ -90,19 +86,37 @@ function DrawerAppBar() {
             >
               <MenuIcon sx={{ fontSize: "2rem" }} />
             </IconButton>
-            {/* <img src={logo} alt="navLogo" height={40} /> */}
-            <Typography
-              variant="h6"
-              component="div"
+
+            <Box
               sx={{
-                flexGrow: 1,
-                display: { xs: "none", sm: "block" },
-                fontFamily: "Inter",
-                fontSize: "30px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-around",
               }}
             >
-              edudoppi
-            </Typography>
+              <img
+                src={logo}
+                alt="navLogo"
+                height={40}
+                style={{
+                  WebkitFilter: "drop-shadow(0 0 3px #fff)",
+                  filter: "drop-shadow(0 0 4px #fff)",
+                  marginRight: "10px",
+                }}
+              />
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "none", sm: "block" },
+                  fontFamily: "Inter",
+                  fontSize: "30px",
+                }}
+              >
+                edudoppi
+              </Typography>
+            </Box>
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },
@@ -114,32 +128,31 @@ function DrawerAppBar() {
               {navItems.map((item) => (
                 <Link to={item == "home" ? "/" : item} key={item}>
                   <Button
-                    key={item}
                     sx={{
                       color: "#a2a2a2",
                       fontSize: { xs: ".9rem", md: "1rem", lg: "1.2rem" },
                       margin: { xs: "0 0px", md: "0 10px" },
                       fontFamily: "inter",
                     }}
-                    className="active"
                   >
                     {item}
                   </Button>
                 </Link>
               ))}
+              <Link to={"/login"}>
+                <Button
+                  sx={{
+                    color: "#fff",
+                    bgcolor: "#00ff0833",
+                    p: "8px 20px",
+                    borderRadius: "25px",
+                  }}
+                  variant="outlined"
+                >
+                  Login
+                </Button>
+              </Link>
             </Box>
-            {/* <Button
-              sx={{
-                color: "#fff",
-                bgcolor: "#00ff0833",
-                p: "8px 20px",
-                borderRadius: "25px",
-                ml: "20px",
-              }}
-              variant="outlined"
-            >
-              Login
-            </Button> */}
           </Toolbar>
         </AppBar>
         <nav style={{ background: "red" }}>
