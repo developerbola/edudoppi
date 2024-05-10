@@ -1,11 +1,23 @@
+import { Container, Box } from "@mui/material";
 import React from "react";
-import { Box } from "@mui/material";
 
 const index = () => {
   return (
-    <Box id="contact" sx={{ minHeight: "100vh" }}>
-      Contact
-    </Box>
+    <Container sx={{ minHeight: "20vh" }}>
+      <Box>
+        <Box>
+          <label>Name</label>
+          <input type="text" placeholder="YourName" />
+        </Box>
+        <Box>
+          <label>Telegram Username</label>
+          <input type="text" placeholder="YourUsername" />
+        </Box>
+      </Box>
+      <Box>
+        <textarea placeholder="Your Message" style={{ resize: "none" }} />
+      </Box>
+    </Container>
   );
 };
 

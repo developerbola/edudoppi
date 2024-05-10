@@ -116,24 +116,24 @@ function DrawerAppBar() {
               <MenuIcon sx={{ fontSize: "2rem" }} />
             </IconButton>
 
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-around",
-              }}
-            >
-              <img
-                src={logo}
-                alt="navLogo"
-                height={40}
-                style={{
-                  WebkitFilter: "drop-shadow(0 0 3px #fff)",
-                  filter: "drop-shadow(0 0 4px #fff)",
-                  marginRight: "10px",
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
                 }}
-              />
-              <Link to="/" style={{ textDecoration: "none" }}>
+              >
+                <img
+                  src={logo}
+                  alt="navLogo"
+                  height={40}
+                  style={{
+                    WebkitFilter: "drop-shadow(0 0 3px #fff)",
+                    filter: "drop-shadow(0 0 4px #fff)",
+                    marginRight: "10px",
+                  }}
+                />
                 <Typography
                   variant="h6"
                   component="div"
@@ -147,8 +147,8 @@ function DrawerAppBar() {
                 >
                   edudoppi
                 </Typography>
-              </Link>
-            </Box>
+              </Box>
+            </Link>
             <Box
               sx={{
                 display: { xs: "none", sm: "block" },
@@ -183,7 +183,7 @@ function DrawerAppBar() {
                   variant="outlined"
                 >
                   Login
-                  <LoginRoundedIcon sx={{ml: "5px"}}/>
+                  <LoginRoundedIcon sx={{ ml: "5px" }} />
                 </Button>
               </Link>
             </Box>
