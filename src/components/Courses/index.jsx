@@ -11,14 +11,10 @@ const index = () => {
         <Box
           sx={{
             width: "100%",
-            pl: "20px",
             mb: "15px",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
           }}
         >
-          <Typography sx={{ fontSize: { xs: "1.5rem", md: "2.5rem" } }}>
+          <Typography sx={{ fontSize: { xs: "1.5rem", md: "2.5rem" }, textAlign: "center" }}>
             Bizning Kurslar
           </Typography>
         </Box>
