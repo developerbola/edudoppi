@@ -1,17 +1,16 @@
 import { Link } from "react-router-dom";
-
+import Form from "./Form";
 import {
   Button,
-  TextField,
   FormControlLabel,
   Checkbox,
-  Grid,
   Box,
   Typography,
   Container,
 } from "@mui/material/";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import GoogleIcon from "@mui/icons-material/Google";
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -54,30 +53,20 @@ export default function SignIn() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          height: "100%",
+          width: "100%",
         }}
       >
         <Typography component="h1" variant="h5">
           Log In
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-          />
+        <Box
+          onSubmit={handleSubmit}
+          noValidate
+          sx={{ mt: 1, height: "70%", width: "100%" }}
+        >
+          <Form label={"Email"} placeholder={"Your Email"} />
+          <Form label={"Password"} placeholder={"Your Password"} />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
@@ -95,14 +84,26 @@ export default function SignIn() {
           >
             Sign In
           </Button>
-          <Grid container>
-            <Grid item>
-              <Link to="/signup" variant="body2">
-                {"Don't have an account? Sign Up"}
-              </Link>
-            </Grid>
-          </Grid>
         </Box>
+        <Box width={"100%"}>
+          <Button
+            sx={{
+              color: "#fff",
+              p: "6px",
+              borderRadius: "10px",
+              mb: "10px",
+              border: "1px solid #ffffff40",
+            }}
+            fullWidth
+            variant="outlined"
+          >
+            <GoogleIcon fontSize="small" sx={{ mr: "5px", pb: "2px" }} /> Sign in with
+            Google
+          </Button>
+        </Box>
+        <Typography>
+          Don't have an account? <Link to="/signup">{"Sign Up"}</Link>
+        </Typography>
       </Box>
     </Container>
   );
