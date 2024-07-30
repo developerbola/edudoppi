@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Form from "./Form";
+import Form from "../../components/UI/Form";
 import {
   Button,
   FormControlLabel,
@@ -10,7 +10,6 @@ import {
 } from "@mui/material/";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import GoogleIcon from "@mui/icons-material/Google";
 
 export default function SignUp() {
   const handleSubmit = (event) => {
@@ -27,7 +26,7 @@ export default function SignUp() {
       maxWidth="xs"
       sx={{
         height: "560px",
-        mt: "150px"
+        mt: "150px",
       }}
     >
       <Link to={"/"} style={{ textDecoration: "none" }}>
@@ -85,7 +84,7 @@ export default function SignUp() {
             Sign In
           </Button>
         </Box>
-        
+
         <Typography>
           Do you have an account? <Link to="/login">Login</Link>
         </Typography>

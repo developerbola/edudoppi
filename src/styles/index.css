@@ -6,7 +6,7 @@
   color: white;
 }
 body {
-  background: url(../public/bg.jpeg);
+  background: url(/bg.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

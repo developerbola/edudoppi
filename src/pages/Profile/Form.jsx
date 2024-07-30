@@ -1,20 +1,22 @@
 import { Box } from "@mui/material";
-import React from "react";
+import { useState } from "react";
 
-const Form = ({ label, placeholder }) => {
+const Form = ({ label, placeholder, type, l }) => {
+  const [value, setValue] = useState("");
+
   return (
     <Box
       sx={{
         display: "flex",
         flexDirection: "column",
         gap: "10px",
-        width: "100%",
-        mt: "15px"
+        width: "400px",
+        mt: "15px",
       }}
     >
       <label>{label}</label>
       <input
-        type="text"
+        type={type}
         placeholder={placeholder}
         style={{
           background: "#ffffff30",
@@ -22,11 +24,13 @@ const Form = ({ label, placeholder }) => {
           border: "none",
           outline: "none",
           padding: "15px",
-          // width: "400px",
           fontSize: "1.1rem",
           color: "#fff",
           minWidth: "100%",
+          letterSpacing: l ,
         }}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
       />
     </Box>
   );

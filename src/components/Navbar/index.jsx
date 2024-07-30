@@ -1,8 +1,9 @@
-import logo from "../../../public/logo.png";
+import logo from "/logo.png";
 import { Link } from "react-router-dom";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import CategoryRoundedIcon from "@mui/icons-material/CategoryRounded";
 import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
+import { Person } from "@mui/icons-material"
 // MUI Components
 
 import {
@@ -19,6 +20,7 @@ import {
   Toolbar,
   Typography,
   Button,
+  Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
@@ -32,6 +34,8 @@ function DrawerAppBar() {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  const user = true;
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -65,7 +69,7 @@ function DrawerAppBar() {
             </ListItem>
           </Link>
         ))}
-        <Link to={"/login"} style={{ textDecoration: "none" }}>
+        <Link to={user ? "/profile" : "/login"} style={{ textDecoration: "none" }}>
           <ListItem>
             <ListItemButton
               sx={{
@@ -79,8 +83,9 @@ function DrawerAppBar() {
                 bgcolor: "#00ff291a",
               }}
             >
-              <ListItemText primary={"Login"} />
-              <LoginRoundedIcon />
+              <ListItemText primary={user ? "Profile" : "Login"} />
+              {user ? <Person /> :
+                <LoginRoundedIcon />}
             </ListItemButton>
           </ListItem>
         </Link>
@@ -151,7 +156,7 @@ function DrawerAppBar() {
             </Link>
             <Box
               sx={{
-                display: { xs: "none", sm: "block" },
+                display: { xs: "none", sm: "flex" },
                 marginRight: "30px",
                 position: "relative",
               }}
@@ -171,21 +176,27 @@ function DrawerAppBar() {
                   </Button>
                 </Link>
               ))}
-              <Link to={"/login"}>
-                <Button
-                  sx={{
-                    color: "#fff",
-                    bgcolor: "#ffffff10",
-                    p: "8px 20px",
-                    borderRadius: "25px",
-                    ml: "10px",
-                  }}
-                  variant="outlined"
-                >
-                  Login
-                  <LoginRoundedIcon sx={{ ml: "5px" }} />
-                </Button>
-              </Link>
+              {user ? (
+                <Link to={"/profile"}>
+                  <Avatar sx={{ ml: "10px" }}></Avatar>
+                </Link>
+              ) : (
+                <Link to={"/login"}>
+                  <Button
+                    sx={{
+                      color: "#fff",
+                      bgcolor: "#ffffff10",
+                      p: "8px 20px",
+                      borderRadius: "25px",
+                      ml: "10px",
+                    }}
+                    variant="outlined"
+                  >
+                    Login
+                    <LoginRoundedIcon sx={{ ml: "5px" }} />
+                  </Button>
+                </Link>
+              )}
             </Box>
           </Toolbar>
         </AppBar>

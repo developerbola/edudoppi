@@ -1,5 +1,5 @@
 import { Container, Box, Button } from "@mui/material";
-import Form from "./Form";
+import Form from "../UI/Form";
 
 const index = () => {
   return (
@@ -9,7 +9,7 @@ const index = () => {
         my: "50px",
       }}
     >
-      <Box sx={{ px: "13%" }}>
+      <Box sx={{ px: { xs: "5%", md: "13%" } }}>
         <Box
           sx={{
             display: "flex",
@@ -49,7 +49,7 @@ const index = () => {
             }}
             variant="outlined"
           >
-            SEND
+            YUBORISH
           </Button>
         </Box>
       </Box>

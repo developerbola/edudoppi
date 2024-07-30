@@ -6,10 +6,11 @@ const Card = ({ icon, txt, color }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
+        // flexDirection: { xs: "column", sm: "row", md: "column" },
         minHeight: { xs: "170px", sm: "200px", md: "250px" },
         width: {
           xs: "100%",
-          sm: "calc(50% - 20px)",
+          sm: "calc(80% - 20px)",
           md: "calc(33.33% - 20px)",
         },
         margin: "10px",
@@ -36,7 +37,7 @@ const Card = ({ icon, txt, color }) => {
       </Box>
       <Typography
         sx={{
-          fontSize: { xs: "1rem", md: "1.3rem", lg: "1.5rem" },
+          fontSize: { xs: "1rem", sm: "1.2rem", md: "1.3rem", lg: "1.5rem" },
           textAlign: { sm: "center", md: "start" },
         }}
       >

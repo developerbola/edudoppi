@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Form from "./Form";
+import Form from "../../components/UI/Form";
 import {
   Button,
   FormControlLabel,
@@ -63,7 +63,7 @@ export default function SignIn() {
         <Box
           onSubmit={handleSubmit}
           noValidate
-          sx={{ mt: 1, height: "70%", width: "100%" }}
+          sx={{ mt: 1, height: "62%", width: "100%" }}
         >
           <Form label={"Email"} placeholder={"Your Email"} />
           <Form label={"Password"} placeholder={"Your Password"} />
@@ -85,6 +85,7 @@ export default function SignIn() {
             Sign In
           </Button>
         </Box>
+        <Typography sx={{ textAlign: "center", mb: "12px" }}>or</Typography>
         <Box width={"100%"}>
           <Button
             sx={{
@@ -97,8 +98,8 @@ export default function SignIn() {
             fullWidth
             variant="outlined"
           >
-            <GoogleIcon fontSize="small" sx={{ mr: "5px", pb: "2px" }} /> Sign in with
-            Google
+            <GoogleIcon fontSize="small" sx={{ mr: "5px", pb: "2px" }} /> Sign
+            in with Google
           </Button>
         </Box>
         <Typography>

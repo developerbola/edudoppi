@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import React from "react";
+import img from "../../assets/course.jpg";
 
-const LeftImage = ({ mt }) => {
+const RightImage = ({ mt }) => {
   return (
     <motion.div
       initial={{
@@ -23,7 +23,7 @@ const LeftImage = ({ mt }) => {
         height: "70%",
         width: "130px",
         background:
-          "url(https://i.pinimg.com/564x/fb/22/82/fb2282597f2aa0af9a1556ce52c6d19a.jpg)",
+          `url(${img})`,
         backgroundSize: "cover",
         borderRadius: "10px",
       }}
@@ -31,4 +31,4 @@ const LeftImage = ({ mt }) => {
   );
 };
 
-export default LeftImage;
+export default RightImage;
