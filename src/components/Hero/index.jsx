@@ -3,6 +3,10 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import RightImage from "./RightImage";
 import { Link } from "react-scroll";
 
+import img1 from "../../assets/Coding.jpg"
+import img2 from "../../assets/Ai.jpg"
+import img3 from "../../assets/Hacking.jpg"
+import img4 from "../../assets/Trading.jpg"
 const index = () => {
   return (
     <Box
@@ -92,10 +96,10 @@ const index = () => {
             justifyContent: "end",
           }}
         >
-          <RightImage mt="70px" />
-          <RightImage mt="20px" />
-          <RightImage mt="70px" />
-          <RightImage mt="20px" />
+          <RightImage mt="70px" img={img1}/>
+          <RightImage mt="20px" img={img2}/>
+          <RightImage mt="70px" img={img3}/>
+          <RightImage mt="20px" img={img4}/>
         </Box>
       </Box>
     </Box>

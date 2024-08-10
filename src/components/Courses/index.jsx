@@ -2,43 +2,11 @@ import { Box, Typography, Container, Button } from "@mui/material";
 import CourseCard from "../UI/CourseCard";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-import img from "../../assets/course.jpg"
+import { Data } from "../../context";
+import { useContext } from "react";
 
 const index = () => {
-  const courses = [
-    {
-      name: "React JS",
-      img: img,
-      cost: "free",
-    },
-    {
-      name: "Angular JS",
-      img: img,
-      cost: "free",
-    },
-    {
-      name: "Vue JS",
-      img: img,
-      cost: "free",
-    },
-    {
-      name: "SMM",
-      img: img,
-      cost: "299 ming",
-    },
-    {
-      name: "Cyber Security",
-      img: img,
-      cost: "299 ming",
-    },
-    {
-      name: "Node JS",
-      img: img,
-      cost: "free",
-    },
-  ];
-
+  const { courses } = useContext(Data);
   return (
     <Box
       sx={{ minHeight: "100vh", px: { xs: "0", sm: "50px" }, py: "15vh" }}
@@ -72,30 +40,27 @@ const index = () => {
             },
           }}
         >
-
-          {
-            courses.map((course, idx) => {
-              return (
-                <motion.div
-                  initial={{
-                    y: 100,
-                    opacity: 0,
-                  }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.1 * idx + 0.5,
-                  }}
-                  key={idx}
-                >
-                  <CourseCard
-                    img={course.img}
-                    name={course.name}
-                    cost={course.cost}
-                  />
-                </motion.div>
-              )
-            })
-          }
+          {courses.map((course, idx) => {
+            return (
+              <motion.div
+                initial={{
+                  y: 100,
+                  opacity: 0,
+                }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.1 * idx + 0.5,
+                }}
+                key={idx}
+              >
+                <CourseCard
+                  img={course.img}
+                  name={course.name}
+                  cost={course.cost}
+                />
+              </motion.div>
+            );
+          })}
         </Box>
         <Link to="/courses" style={{ margin: "15px auto" }}>
           <Button

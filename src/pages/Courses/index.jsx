@@ -2,42 +2,13 @@ import { Box, Container, Typography, Button } from "@mui/material";
 import CourseCard from "../../components/UI/CourseCard";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { Data } from "../../context";
 
-import img from "../../assets/course.jpg"
 
 const index = () => {
-  const courses = [
-    {
-      name: "React JS",
-      img: img,
-      cost: "free",
-    },
-    {
-      name: "Angular JS",
-      img: img,
-      cost: "free",
-    },
-    {
-      name: "Vue JS",
-      img: img,
-      cost: "free",
-    },
-    {
-      name: "SMM",
-      img: img,
-      cost: "299 ming",
-    },
-    {
-      name: "Cyber Security",
-      img: img,
-      cost: "299 ming",
-    },
-    {
-      name: "Node JS",
-      img: img,
-      cost: "free",
-    },
-  ];
+  const { courses } = useContext(Data);
+
   return (
     <>
       <Container sx={{ mb: "20px", display: "flex", flexDirection: "column" }}>

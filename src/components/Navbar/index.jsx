@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import CategoryRoundedIcon from "@mui/icons-material/CategoryRounded";
 import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
-import { Person } from "@mui/icons-material"
+import { Person } from "@mui/icons-material";
 // MUI Components
 
 import {
@@ -23,7 +23,8 @@ import {
   Avatar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { Data } from "../../context";
 
 const drawerWidth = 240;
 const navItems = ["home", "courses"];
@@ -35,7 +36,7 @@ function DrawerAppBar() {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const user = true;
+  const { user } = useContext(Data);
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
@@ -69,7 +70,10 @@ function DrawerAppBar() {
             </ListItem>
           </Link>
         ))}
-        <Link to={user ? "/profile" : "/login"} style={{ textDecoration: "none" }}>
+        <Link
+          to={user ? "/profile" : "/login"}
+          style={{ textDecoration: "none" }}
+        >
           <ListItem>
             <ListItemButton
               sx={{
@@ -84,8 +88,7 @@ function DrawerAppBar() {
               }}
             >
               <ListItemText primary={user ? "Profile" : "Login"} />
-              {user ? <Person /> :
-                <LoginRoundedIcon />}
+              {user ? <Person /> : <LoginRoundedIcon />}
             </ListItemButton>
           </ListItem>
         </Link>

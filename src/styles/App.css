@@ -9,3 +9,14 @@ h5,
 p {
   cursor: default;
 }
+.video-container {
+  width: 100%; /* Adjust as needed */
+  max-width: 800px; /* Set a max width for the player */
+  margin: 0 auto; /* Center the player */
+}
+
+.video-player {
+  width: 100%;
+  height: 450px; /* Adjust the height as necessary */
+  border: none; /* Remove iframe border if applicable */
+}

@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import img from "../../assets/course.jpg";
 
-const RightImage = ({ mt }) => {
+const RightImage = ({ mt , img}) => {
   return (
     <motion.div
       initial={{
         x: 100,
         opacity: 0,
         y: 50,
-        backgroundSize: "300%",
+        backgroundSize: "500%",
         backgroundPosition: "50%, -50%",
       }}
       animate={{ x: 0, opacity: 1, y: mt, backgroundSize: "200%" }}
@@ -24,8 +23,11 @@ const RightImage = ({ mt }) => {
         width: "130px",
         background:
           `url(${img})`,
+        backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+
         borderRadius: "10px",
+        objectFit: 'cover'
       }}
     ></motion.div>
   );
